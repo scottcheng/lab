@@ -1,79 +1,30 @@
-vendor(prop, args)
-  -webkit-{prop} args
-  -moz-{prop} args
-  -ms-{prop} args
-  -o-{prop} args
-  {prop} args
-
-transition()
-  vendor('transition', arguments)
-
-border-radius()
-  vendor('border-radius', arguments)
-
-transform()
-  vendor('transform', arguments)
-
-box-shadow()
-  vendor('box-shadow', arguments)
-
-box-orient()
-  vendor('box-orient', arguments)
-
-box-flex()
-  vendor('box-flex', arguments)
-
-box-align()
-  vendor('box-align', arguments)
-
-box-pack()
-  vendor('box-pack', arguments)
-
-box-reflect()
-  vendor('box-reflect', arguments)
-
-box-sizing()
-  vendor('box-sizing', arguments)
-
-user-select()
-  vendor('user-select', arguments)
-
-animation()
-  vendor('animation', arguments)
-
-animation-delay()
-  vendor('animation-delay', arguments)
-
-background-size()
-  vendor('background-size', arguments)
-
+@import '../lib/mixins'
+@import '../lib/stybr'
 
 html, body
   margin 0
   width 100%
   height 100%
-
-#bg
-  width 100%
-  height 100%
-  background url(sky-in-glass.jpg) no-repeat center center
-  background-size cover
-
+  background-color #000
   overflow hidden
 
-  #grid-layer
-    position absolute
-    top 0
-    bottom -50%
-    left 0
-    right -50%
-    overflow hidden
+#grid-layer
+  position absolute
+  top 0
+  bottom 0
+  left 0
+  right 0
+  overflow hidden
+  .grid-row
+    float-wrapper()
+    width 1000%
     .grid
       float left
-      background-color #fff
-      opacity 0
+      opacity .05
       // border-radius 15px
       transition opacity 2s
       &:hover
-        opacity .5
-        transition opacity .25s
+        opacity 1
+        transition opacity .05s
+      &.bright
+        opacity 1 !important

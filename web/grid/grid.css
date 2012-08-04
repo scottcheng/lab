@@ -1,43 +1,13 @@
-html,
-body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-#bg {
-  width: 100%;
-  height: 100%;
-  background: url("sky-in-glass.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -ms-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  overflow: hidden;
-}
-#bg #grid-layer {
-  position: absolute;
-  top: 0;
-  bottom: -50%;
-  left: 0;
-  right: -50%;
-  overflow: hidden;
-}
-#bg #grid-layer .grid {
-  float: left;
-  background-color: #fff;
-  opacity: 0;
-  -webkit-transition: opacity 2s;
-  -moz-transition: opacity 2s;
-  -ms-transition: opacity 2s;
-  -o-transition: opacity 2s;
-  transition: opacity 2s;
-}
-#bg #grid-layer .grid:hover {
-  opacity: 0.5;
-  -webkit-transition: opacity 0.25s;
-  -moz-transition: opacity 0.25s;
-  -ms-transition: opacity 0.25s;
-  -o-transition: opacity 0.25s;
-  transition: opacity 0.25s;
-}
+.clearfix{display:block;}
+.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
+.float-wrapper{display:block;}
+.float-wrapper > div,.float-wrapper > nav,.float-wrapper > ul,.float-wrapper > li{float:left}
+.float-wrapper:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
+html,body{margin:0;width:100%;height:100%;background-color:#000;overflow:hidden}
+#grid-layer{position:absolute;top:0;bottom:0;left:0;right:0;overflow:hidden;}
+#grid-layer .grid-row{display:block;width:1000%;}
+#grid-layer .grid-row > div,#grid-layer .grid-row > nav,#grid-layer .grid-row > ul,#grid-layer .grid-row > li{float:left}
+#grid-layer .grid-row:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
+#grid-layer .grid-row .grid{float:left;opacity:.05;-webkit-transition:opacity 2s;-moz-transition:opacity 2s;-ms-transition:opacity 2s;-o-transition:opacity 2s;transition:opacity 2s;}
+#grid-layer .grid-row .grid:hover{opacity:1;-webkit-transition:opacity .05s;-moz-transition:opacity .05s;-ms-transition:opacity .05s;-o-transition:opacity .05s;transition:opacity .05s}
+#grid-layer .grid-row .grid.bright{opacity:1 !important}
