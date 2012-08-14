@@ -1,0 +1,26 @@
+!!!
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    nav
+      ul
+        each nav in ['', 'About', 'Contact']
+          if title === nav
+            li.active
+              a(href='/#{nav.toLowerCase()}')= nav.length ? nav : 'Home'
+          else
+            li
+              a(href='/#{nav.toLowerCase()}')= nav.length ? nav : 'Home'
+    nav
+      - var nav = {}; nav[title] = 'active'
+      ul
+        // pass title to class
+        li(class='#{nav.Home}')
+          a(href='/') Home
+        li(class='#{nav.About}')
+          a(href='/about') About
+        li(class='#{nav.Contact}')
+          a(href='/contact') Contact
+    block content
